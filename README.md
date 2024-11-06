@@ -39,6 +39,9 @@ plt.title("Distribution of Impressions From Home")
 sns.distplot(data['From Home'])
 plt.show()
 
+![ig](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG1.png)
+
+
 ## Distribution of Impressions From Hashtags
 
 plt.figure(figsize=(10, 8))
@@ -47,12 +50,17 @@ plt.title("Distribution of impressions from Hashtags")  # Corrected to plt.title
 sns.histplot(data['From Hashtags'], kde=True)
 plt.show()
 
+![IG](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/iG2.png)
+
+
 ## Distribution of Impressions From Explore
 
 plt.figure(figsize=(10, 8))
 plt.title("Distribution of Impressions From Explore")
 sns.distplot(data['From Explore'])
 plt.show()
+
+![IG2](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG3.png)
 
 Home Impressions: It's challenging to reach all followers daily, suggesting limitations in organic reach.
 Hashtag Impressions: While hashtags can expand reach to new users, they are not a guaranteed solution for all posts.
@@ -73,6 +81,9 @@ fig = px.pie(data, values=values, names=labels,
              title='Impressions on Instagram Posts From Various Sources', hole=0.5)
 fig.show()
 
+![IG4](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG4.png)
+
+
 The above donut plot shows that almost 50 per cent of the reach is from my followers, 38.1 per cent is from hashtags, 9.14 per cent is from the explore section, and 3.01 per cent is from other sources.
 
 ## Analysing Content Here. the dataset has two columns, namely caption and hashtags, which will help to understand the kind of content posted on Instagram. Createte a wordcloud of the caption column to look at the most used words in the caption
@@ -86,6 +97,9 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
 
+![IG5](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG5.png)
+
+
 ## The most used hashtags in Instagram posts
 
 text = " ".join(i for i in data.Hashtags)
@@ -96,12 +110,18 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
 
+![IG6](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG6.png)
+
+
 ## Analysing Relationships. Understanding how the Instagram algorithm works. Relationship between the number of likes and the number of impressions on my Instagram posts.
 
 figure = px.scatter(data_frame = data, x="Impressions",
                     y="Likes", size="Likes", trendline="ols", 
                     title = "Relationship Between Likes and Impressions")
 figure.show()
+
+![IG7](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG7.png)
+
 
 ## Now let’s see the relationship between the number of comments and the number of impressions on Instagram posts:
 
@@ -110,12 +130,18 @@ figure = px.scatter(data_frame = data, x="Impressions",
                     title = "Relationship Between Comments and Total Impressions")
 figure.show()
 
+![IG8](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG8.png)
+
+
 ## Relationship Between Shares and Total Impressions
 
 figure = px.scatter(data_frame = data, x="Impressions",
                     y="Saves", size="Saves", trendline="ols", 
                     title = "Relationship Between Post Saves and Total Impressions")
 figure.show()
+
+![IG9](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG9.png)
+
 
 The analysis reveals the following relationships between Instagram metrics and reach:
 
@@ -136,6 +162,9 @@ correlation = numeric_data.corr()
 # Display correlation with the 'Impressions' column
 print(correlation["Impressions"].sort_values(ascending=False))
 
+![IG10](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG10.png)
+
+
 Based on the analysis, it's clear that likes and saves are significant factors in boosting Instagram reach. While shares can also contribute to increased visibility, their impact is less pronounced compared to likes and saves.
 
 ## Analyzing Conversion Rate
@@ -145,6 +174,9 @@ In Instagram, conversation rate means how many followers you are getting from th
 conversion_rate = (data["Follows"].sum() / data["Profile Visits"].sum()) * 100
 print(conversion_rate)
 
+![IG11](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG11.png)
+
+
 ## A 41% conversation rate on Instagram is indeed exceptional. This suggests that a significant portion of your audience is actively engaging with your content, whether it's through likes, comments, or direct messages.
 
 ## Relationship between the total profile visits and the number of followers gained from all profile visits:
@@ -153,6 +185,9 @@ figure = px.scatter(data_frame = data, x="Profile Visits",
                     y="Follows", size="Follows", trendline="ols", 
                     title = "Relationship Between Profile Visits and Followers Gained")
 figure.show()
+
+![IG12](https://github.com/Priyaah13/Instagram-Reach-Analysis-using-Python/blob/main/IG12.png)
+
 
 ## Instagram Reach Prediction Model
 
